@@ -161,6 +161,7 @@ export const About: React.FC<AboutProps> = ({ onOrderClick }) => {
                 muted
                 loop
                 playsInline
+                preload="none"
                 className="w-full h-full object-cover filter contrast-105 brightness-95 group-hover:scale-105 transition-transform duration-700 pointer-events-none"
               />
 
@@ -178,9 +179,9 @@ export const About: React.FC<AboutProps> = ({ onOrderClick }) => {
           {/* 4 факта в ряд */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 w-full lg:w-auto">
             <div className="about-stat-box">
-              <div className="font-['Orbitron'] font-black text-2xl sm:text-3xl text-white tracking-tight mb-1 flex items-center gap-1">
+              <div className="font-['Orbitron'] font-semibold text-2xl sm:text-3xl text-white tracking-tight mb-1 flex items-center gap-1">
                 <span>500</span>
-                <span className="text-blue-400">+</span>
+                <span className="bg-gradient-to-r from-[#2563eb] via-[#60a5fa] to-[#38bdf8] bg-clip-text text-transparent font-bold">+</span>
               </div>
               <div className="font-mono text-[10.5px] uppercase tracking-wider text-zinc-400">
                 Об'єктів у Києві
@@ -188,7 +189,7 @@ export const About: React.FC<AboutProps> = ({ onOrderClick }) => {
             </div>
 
             <div className="about-stat-box">
-              <div className="font-['Orbitron'] font-black text-2xl sm:text-3xl text-blue-400 tracking-tight mb-1">
+              <div className="font-['Orbitron'] font-semibold text-2xl sm:text-3xl bg-gradient-to-r from-[#2563eb] via-[#60a5fa] to-[#38bdf8] bg-clip-text text-transparent tracking-tight mb-1">
                 &lt; 10 хв
               </div>
               <div className="font-mono text-[10.5px] uppercase tracking-wider text-zinc-400">
@@ -197,9 +198,9 @@ export const About: React.FC<AboutProps> = ({ onOrderClick }) => {
             </div>
 
             <div className="about-stat-box">
-              <div className="font-['Orbitron'] font-black text-2xl sm:text-3xl text-white tracking-tight mb-1 flex items-center gap-1">
+              <div className="font-['Orbitron'] font-semibold text-2xl sm:text-3xl text-white tracking-tight mb-1 flex items-center gap-1">
                 <span>100</span>
-                <span className="text-blue-400">%</span>
+                <span className="bg-gradient-to-r from-[#2563eb] via-[#60a5fa] to-[#38bdf8] bg-clip-text text-transparent font-bold">%</span>
               </div>
               <div className="font-mono text-[10.5px] uppercase tracking-wider text-zinc-400">
                 Озброєний штат
@@ -207,7 +208,7 @@ export const About: React.FC<AboutProps> = ({ onOrderClick }) => {
             </div>
 
             <div className="about-stat-box">
-              <div className="font-['Orbitron'] font-black text-2xl sm:text-3xl text-white tracking-tight mb-1 flex items-center gap-1">
+              <div className="font-['Orbitron'] font-semibold text-2xl sm:text-3xl text-white tracking-tight mb-1 flex items-center gap-1">
                 <span>24/7</span>
               </div>
               <div className="font-mono text-[10.5px] uppercase tracking-wider text-zinc-400">
