@@ -59,7 +59,7 @@ export const Button: React.FC<ButtonProps> = ({
       type={type}
       style={{ clipPath: clip, WebkitClipPath: clip }}
       className={cn(
-        'roller-host group relative inline-flex items-center justify-center gap-2',
+        'roller-host group/btn relative inline-flex items-center justify-center gap-2',
         'font-sans font-bold uppercase tracking-wider overflow-hidden cursor-pointer select-none',
         'shadow-[0_10px_25px_rgba(0,0,0,0.3)] hover:shadow-[0_15px_35px_rgba(37,99,235,0.35)]',
         'transition-shadow duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400',
@@ -70,10 +70,10 @@ export const Button: React.FC<ButtonProps> = ({
       )}
       {...props}
     >
-      {/* Слой заливки, въезжающий слева направо */}
+      {/* Слой заливки, въезжающий слева направо только при наведении на саму кнопку */}
       <span
         className={cn(
-          'absolute inset-0 z-0 pointer-events-none -translate-x-full group-hover:translate-x-0',
+          'absolute inset-0 z-0 pointer-events-none -translate-x-full group-hover/btn:translate-x-0',
           'transition-transform duration-400 ease-[cubic-bezier(0.65,0,0.35,1)]',
           FILL_GRADIENT,
         )}

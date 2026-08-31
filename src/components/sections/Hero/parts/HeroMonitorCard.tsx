@@ -56,13 +56,13 @@ export const HeroMonitorCard: React.FC<HeroMonitorCardProps> = ({ onOrderClick }
   <div
     className={`${hx.card} hidden lg:block absolute right-6 sm:right-8 bottom-28 sm:bottom-32 z-20 w-[365px] sm:w-[380px] h-[170px] pointer-events-auto`}
   >
-    <article className="group relative w-full h-full transition-transform duration-500 hover:-translate-y-1 hover:scale-[1.02]">
+    <article className="group/card relative w-full h-full transition-transform duration-500 hover:-translate-y-1 hover:scale-[1.02]">
       <div className="absolute inset-0 z-0 backdrop-blur-2xl">
         <GlassPlate />
       </div>
 
     {/* Мягкое внутреннее свечение при наведении */}
-    <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-white/[0.04] via-transparent to-white/[0.08] pointer-events-none opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
+    <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-white/[0.04] via-transparent to-white/[0.08] pointer-events-none opacity-60 group-hover/card:opacity-100 transition-opacity duration-500" />
 
     <div className="relative z-10 w-full h-full p-5 sm:p-6 flex items-start justify-between gap-4">
       <div className="flex-1 pr-1 flex flex-col justify-between h-full">
@@ -86,13 +86,13 @@ export const HeroMonitorCard: React.FC<HeroMonitorCardProps> = ({ onOrderClick }
         </Button>
       </div>
 
-      <div className="relative w-22 h-22 sm:w-24 sm:h-24 rounded-2xl overflow-hidden border border-white/25 shrink-0 bg-black/60 shadow-[0_10px_25px_rgba(0,0,0,0.6)] group-hover:border-white/40 transition-colors duration-300 mr-1">
+      <div className="relative w-22 h-22 sm:w-24 sm:h-24 rounded-2xl overflow-hidden border border-white/25 shrink-0 bg-black/60 shadow-[0_10px_25px_rgba(0,0,0,0.6)] group-hover/card:border-white/40 transition-colors duration-300 mr-1">
         <img
           src="/images/camera_guard.png"
           alt="Оператор відеоспостереження IRON SECURITY"
           loading="lazy"
           decoding="async"
-          className="w-full h-full object-cover contrast-110 brightness-95 group-hover:scale-105 transition-transform duration-500"
+          className="w-full h-full object-cover contrast-110 brightness-95 group-hover/card:scale-105 transition-transform duration-500"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
       </div>
