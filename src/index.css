@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+/* -------------------------------------------------------------
+ * Custom Web Fonts: PP Neue Montreal & PP Editorial New
+ * ------------------------------------------------------------- */
+
+/* PP Neue Montreal (Thin, Book/Regular, Medium, Bold) */
+@font-face {
+  font-family: 'PP Neue Montreal';
+  src: url('/fonts/PPNeueMontreal-Thin.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Neue Montreal';
+  src: url('/fonts/PPNeueMontreal-Book.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Neue Montreal';
+  src: url('/fonts/PPNeueMontreal-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Neue Montreal';
+  src: url('/fonts/PPNeueMontreal-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Neue Montreal';
+  src: url('/fonts/PPNeueMontreal-Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* PP Editorial New (Regular, Italic, Ultrabold) */
+@font-face {
+  font-family: 'PP Editorial New';
+  src: url('/fonts/PPEditorialNew-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Editorial New';
+  src: url('/fonts/PPEditorialNew-Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Editorial New';
+  src: url('/fonts/PPEditorialNew-Ultrabold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: 'PP Neue Montreal', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'PP Neue Montreal', sans-serif;
+  --font-tactical: 'Orbitron', 'Syncopate', sans-serif;
+  --font-editorial: 'PP Editorial New', Georgia, serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Холодный оружейный титан, графит, сталь и белый */
+  --color-gunmetal-950: #08090b;
+  --color-gunmetal-900: #0f1115;
+  --color-gunmetal-800: #171920;
+  --color-gunmetal-700: #222631;
+  --color-titanium-400: #9aa0a6;
+  --color-titanium-300: #cbd5e1;
+  --color-titanium-200: #e2e8f0;
+  --color-titanium-100: #f1f5f9;
+  --color-steel-accent: #64748b;
+  --color-steel-glow: #94a3b8;
+}
+
+/* Custom Tactical Glassmorphism & UI utilities */
+:root {
+  color-scheme: light;
+}
+
+html, body {
+  background-color: #f2f4f7;
+  background-image: radial-gradient(circle at 50% 30%, #fafbfc 0%, #ebedf2 100%);
+  color: #0f1115;
+  overflow-x: hidden;
+  font-family: var(--font-sans);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #08090b;
+}
+::-webkit-scrollbar-thumb {
+  background: #222631;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
