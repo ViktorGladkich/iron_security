@@ -8,7 +8,7 @@ interface MobileMenuProps {
   activeSection?: string;
 }
 
-export const MobileMenu: React.FC<MobileMenuProps> = ({ onOrderClick }) => {
+export const MobileMenu: React.FC<MobileMenuProps> = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   // Блокировка скролла страницы при открытом мобильном меню
@@ -26,12 +26,6 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ onOrderClick }) => {
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     setIsOpen(false);
     smoothScrollToSection(e, href);
-  };
-
-  const handleOrder = (e: React.MouseEvent) => {
-    e.preventDefault();
-    setIsOpen(false);
-    onOrderClick?.();
   };
 
   return (
@@ -137,32 +131,12 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ onOrderClick }) => {
                   </a>
                 </div>
               ))}
-
-              {/* Ссылка "Замовити" */}
-              <div className="overflow-hidden py-0.5 pt-1">
-                <a
-                  href="#order"
-                  onClick={handleOrder}
-                  style={{
-                    transitionDelay: isOpen
-                      ? `${120 + NAV_ITEMS.length * 45}ms`
-                      : '0ms',
-                  }}
-                  className={`group block cursor-pointer transition-all duration-750 ease-[cubic-bezier(0.19,1,0.22,1)] transform ${
-                    isOpen ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
-                  } active:translate-x-1.5`}
-                >
-                  <span className="block font-display text-[28px] xs:text-[32px] sm:text-[36px] font-semibold tracking-tight text-white group-hover:text-sky-300 transition-colors leading-[92%]">
-                    Замовити
-                  </span>
-                </a>
-              </div>
             </nav>
 
             {/* Нижняя юридическая информация */}
             <div
               style={{
-                transitionDelay: isOpen ? '500ms' : '0ms',
+                transitionDelay: isOpen ? '400ms' : '0ms',
               }}
               className={`relative z-10 mt-6 pt-4 border-t border-white/10 flex flex-col gap-1.5 text-[13px] text-white/70 font-sans transition-all duration-600 ease-[cubic-bezier(0.19,1,0.22,1)] ${
                 isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
