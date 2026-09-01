@@ -29,7 +29,9 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({
           background:
             'linear-gradient(155deg, rgba(255,255,255,.16) 0%, rgba(255,255,255,.03) 34%, rgba(255,255,255,0) 62%), linear-gradient(200deg, #123a86 0%, #0d2a63 45%, #0a1f4d 100%)',
           boxShadow:
-            'inset 0 1px 0 rgba(255,255,255,.42), inset 0 22px 46px -26px rgba(255,255,255,.25), 0 20px 40px -20px rgba(0,0,0,0.3)',
+            'inset 0 1px 0 rgba(255,255,255,.42), inset 0 22px 46px -26px rgba(255,255,255,.25), 0 20px 45px -15px rgba(8,29,69,0.22), 0 10px 20px -10px rgba(0,0,0,0.08)',
+          WebkitMaskImage: '-webkit-radial-gradient(white, black)',
+          transform: 'translateZ(0)',
         }}
         className={`group relative min-h-[260px] sm:min-h-[280px] lg:h-[380px] sm:lg:h-[400px] p-6 sm:p-8 rounded-[24px] border flex flex-col justify-between overflow-hidden isolate select-none transition-[border-color,box-shadow] duration-500 ${
           isActive ? 'border-white/35 ring-1 ring-white/20' : 'border-white/[0.18] hover:border-white/30'
@@ -37,10 +39,10 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({
       >
         {/* 1. Світна пляма — Luminous Gradient (::before) */}
         <div
-          className="pointer-events-none absolute -inset-[20%] -z-20 transform-gpu group-hover:scale-105 transition-transform duration-700"
+          className="pointer-events-none absolute inset-0 -z-20 transform-gpu group-hover:scale-105 transition-transform duration-700"
           style={{
             background: radialGrad,
-            filter: 'blur(50px) saturate(170%)',
+            filter: 'blur(35px) saturate(170%)',
           }}
         />
 
@@ -49,7 +51,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({
           className="pointer-events-none absolute inset-0 -z-10 mix-blend-soft-light"
           style={{
             backgroundImage:
-              'repeating-linear-gradient(90deg, rgba(255,255,255,.20) 0%, rgba(255,255,255,.04) 20%, rgba(0,0,0,.30) 50%, rgba(255,255,255,.04) 80%, rgba(255,255,255,.20) 100%)',
+              'repeating-linear-gradient(90deg, rgba(255,255,255,.18) 0%, rgba(255,255,255,.02) 25%, rgba(255,255,255,0) 50%, rgba(255,255,255,.02) 75%, rgba(255,255,255,.18) 100%)',
             backgroundSize: '34px 100%',
           }}
         />

@@ -125,12 +125,12 @@ export const ContactModal: React.FC<ContactModalProps> = ({
           }}
         />
 
-        {/* Ребристая фактура стекла */}
+        {/* Ребриста фактура стекла */}
         <div
           className="pointer-events-none absolute inset-0 -z-10 mix-blend-soft-light"
           style={{
             backgroundImage:
-              'repeating-linear-gradient(90deg, rgba(255,255,255,.22) 0%, rgba(255,255,255,.04) 20%, rgba(0,0,0,.30) 50%, rgba(255,255,255,.04) 80%, rgba(255,255,255,.22) 100%)',
+              'repeating-linear-gradient(90deg, rgba(255,255,255,.18) 0%, rgba(255,255,255,.02) 25%, rgba(255,255,255,0) 50%, rgba(255,255,255,.02) 75%, rgba(255,255,255,.18) 100%)',
             backgroundSize: '34px 100%',
           }}
         />

@@ -58,26 +58,28 @@ export const ContactFormCard = forwardRef<HTMLDivElement, ContactFormCardProps>(
             background:
               'linear-gradient(155deg, rgba(255,255,255,.16) 0%, rgba(255,255,255,.03) 34%, rgba(255,255,255,0) 62%), linear-gradient(200deg, #123a86 0%, #0d2a63 45%, #0a1f4d 100%)',
             boxShadow:
-              'inset 0 1px 0 rgba(255,255,255,.42), inset 0 22px 46px -26px rgba(255,255,255,.25), 0 20px 40px -20px rgba(0,0,0,0.5)',
+              'inset 0 1px 0 rgba(255,255,255,.42), inset 0 22px 46px -26px rgba(255,255,255,.25), 0 20px 50px -15px rgba(8,29,69,0.25), 0 10px 25px -10px rgba(0,0,0,0.1)',
+            WebkitMaskImage: '-webkit-radial-gradient(white, black)',
+            transform: 'translateZ(0)',
           }}
           className="relative h-full p-5 sm:p-10 md:p-11 rounded-[26px] border border-white/25 flex flex-col justify-between overflow-hidden isolate select-none transition-[border-color,box-shadow] duration-500 hover:border-white/40"
         >
-          {/* Світна пляма — Luminous Gradient */}
+          {/* Світна пляма — Luminous Gradient (ідеально в межах заокруглених кутів) */}
           <div
-            className="pointer-events-none absolute -inset-[20%] -z-20 transform-gpu group-hover:scale-105 transition-transform duration-700"
+            className="pointer-events-none absolute inset-0 -z-20 transform-gpu group-hover:scale-105 transition-transform duration-700"
             style={{
               background:
-                'radial-gradient(46% 52% at 74% 30%, #3b82f6 0%, rgba(59,130,246,0) 68%), radial-gradient(40% 44% at 88% 62%, #1e5fd6 0%, rgba(30,95,214,0) 70%), radial-gradient(34% 38% at 62% 18%, #67e8f9 0%, rgba(103,232,249,0) 72%)',
-              filter: 'blur(50px) saturate(170%)',
+                'radial-gradient(55% 60% at 74% 30%, #3b82f6 0%, rgba(59,130,246,0) 70%), radial-gradient(50% 55% at 88% 62%, #1e5fd6 0%, rgba(30,95,214,0) 72%), radial-gradient(40% 45% at 62% 18%, #67e8f9 0%, rgba(103,232,249,0) 75%)',
+              filter: 'blur(35px) saturate(170%)',
             }}
           />
 
-          {/* Ребриста поверхня скла */}
+          {/* Ребриста поверхня скла (без темних смуг на кутах) */}
           <div
             className="pointer-events-none absolute inset-0 -z-10 mix-blend-soft-light"
             style={{
               backgroundImage:
-                'repeating-linear-gradient(90deg, rgba(255,255,255,.20) 0%, rgba(255,255,255,.04) 20%, rgba(0,0,0,.30) 50%, rgba(255,255,255,.04) 80%, rgba(255,255,255,.20) 100%)',
+                'repeating-linear-gradient(90deg, rgba(255,255,255,.18) 0%, rgba(255,255,255,.02) 25%, rgba(255,255,255,0) 50%, rgba(255,255,255,.02) 75%, rgba(255,255,255,.18) 100%)',
               backgroundSize: '34px 100%',
             }}
           />
