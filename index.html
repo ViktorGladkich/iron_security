@@ -1,38 +1,78 @@
 <!doctype html>
-<html lang="uk">
+<html lang="uk" prefix="og: https://ogp.me/ns#">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    
+    <!-- Основні SEO-метадані -->
     <title>Охоронна компанія IRON SECURITY Київ | Охорона бізнесу, обʼєктів та супровід 24/7</title>
-    <meta name="description" content="IRON SECURITY — провідна ліцензована охоронна компанія у Києві. Фізична охорона обʼєктів, персональний захист, супровід бізнесу, мобільні групи швидкого реагування. Прибуття до 10 хвилин." />
-    <meta name="keywords" content="охоронна компанія київ, охорона київ, замовити охорону київ, фізична охорона обєктів київ, особиста охорона київ, охорона бізнесу київ, професійний супровід київ, служба безпеки київ" />
+    <meta name="description" content="IRON SECURITY — провідна ліцензована охоронна компанія у Києві. Фізична охорона обʼєктів, персональний VIP-захист, супровід бізнесу, пультова охорона та мобільні групи швидкого реагування (ГШР). Прибуття до 10 хвилин." />
+    <meta name="keywords" content="охоронна компанія київ, охорона київ, замовити охорону київ, фізична охорона обєктів київ, особиста охорона київ, охорона бізнесу київ, професійний супровід київ, служба безпеки київ, пульт охорони київ, гшр київ" />
+    <meta name="author" content="IRON SECURITY" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <link rel="canonical" href="https://ironsecurity.ua/" />
+    
+    <!-- Геолокаційні теги (Local SEO Київ) -->
     <meta name="geo.region" content="UA-30" />
     <meta name="geo.placename" content="Київ" />
     <meta name="geo.position" content="50.4501;30.5234" />
     <meta name="ICBM" content="50.4501, 30.5234" />
+
+    <!-- Open Graph / Facebook / Telegram / Viber -->
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="uk_UA" />
-    <meta property="og:title" content="Охоронна компанія IRON SECURITY Київ | Професійні послуги безпеки" />
-    <meta property="og:description" content="Ліцензована охоронна компанія у Києві. Екіпажі спортсменів з навичками поводження зі зброєю. Прибуття за викликом до 10 хвилин по Києву." />
     <meta property="og:site_name" content="IRON SECURITY" />
-    <link rel="canonical" href="https://ironsecurity.ua/" />
+    <meta property="og:url" content="https://ironsecurity.ua/" />
+    <meta property="og:title" content="Охоронна компанія IRON SECURITY Київ | Ліцензовані послуги безпеки 24/7" />
+    <meta property="og:image" content="https://ironsecurity.ua/og-image.jpg" />
+    <meta property="og:image:secure_url" content="https://ironsecurity.ua/og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="IRON SECURITY — Охоронна компанія преміум-класу Київ" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="IRON SECURITY — Охоронна компанія преміум-класу в Києві" />
+    <meta name="twitter:description" content="Фізична охорона обʼєктів, особистий VIP-захист, супровід та швидке реагування до 10 хвилин у Києві 24/7." />
+    <meta name="twitter:image" content="https://ironsecurity.ua/og-image.jpg" />
+
+    <!-- Favicon & PWA App Icons -->
+    <link rel="icon" type="image/png" href="/images/card-company-logo.png" />
+    <link rel="apple-touch-icon" href="/images/card-company-logo.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#04060b" />
+    <meta name="color-scheme" content="dark light" />
+
+    <!-- Попереднє завантаження критичних асетів (LCP Performance) -->
     <link rel="preload" as="image" href="/images/human_hero_security_cropped.png" fetchpriority="high" />
     <link rel="preload" as="font" type="font/otf" href="/fonts/PPNeueMontreal-Book.otf" crossorigin />
     <link rel="preload" as="font" type="font/otf" href="/fonts/PPNeueMontreal-Bold.otf" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800;900&family=Syncopate:wght@700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+    <!-- Structured Data 1: SecurityService & LocalBusiness (Rich Snippets) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "SecurityService",
+      "@type": ["SecurityService", "LocalBusiness"],
+      "@id": "https://ironsecurity.ua/#organization",
       "name": "IRON SECURITY",
-      "image": "https://ironsecurity.ua/images/iron_shield_icon.png",
-      "description": "Професійна охоронна компанія у Києві. Охорона обʼєктів, особиста безпека, супровід бізнесу.",
+      "alternateName": "Охоронна компанія IRON SECURITY",
+      "url": "https://ironsecurity.ua/",
+      "logo": "https://ironsecurity.ua/images/card-company-logo.png",
+      "image": "https://ironsecurity.ua/og-image.jpg",
+      "description": "Провідна ліцензована охоронна компанія у Києві. Фізична охорона обʼєктів, персональний VIP-захист, супровід бізнесу, мобільні групи швидкого реагування (ГШР) з часом прибуття до 10 хвилин.",
+      "telephone": "+380440000000",
+      "email": "contact@ironsecurity.ua",
+      "priceRange": "$$",
+      "currenciesAccepted": "UAH",
+      "paymentAccepted": "Cash, Credit Card, Bank Transfer",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Київ",
+        "addressRegion": "Київська область",
         "addressCountry": "UA"
       },
       "geo": {
@@ -40,16 +80,103 @@
         "latitude": 50.4501,
         "longitude": 30.5234
       },
-      "telephone": "+380440000000",
-      "priceRange": "$$",
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Київ та Київська область"
+      },
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
-        ],
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
         "opens": "00:00",
         "closes": "23:59"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.98",
+        "reviewCount": "128",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Послуги безпеки IRON SECURITY",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Особиста охорона (VIP Protect)",
+              "description": "Персональний фізичний захист перших осіб, топ-менеджерів та родин спортсменами з тактичною та вогнепальною підготовкою."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Охорона нерухомості та об'єктів",
+              "description": "Цілодобовий фізичний та периметральний контроль заміських резиденцій, маєтків, котеджних містечок та логістичних комплексів."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Безпека бізнесу",
+              "description": "Комплексна безпека бізнес-центрів, офісів, фінансових установ, впровадження СКУД та захист комерційної таємниці."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Пультова охорона та виїзд ГШР",
+              "description": "Цілодобовий відеомоніторинг обʼєктів та миттєвий виїзд озброєного екіпажу ГШР до 10 хвилин."
+            }
+          }
+        ]
       }
+    }
+    </script>
+
+    <!-- Structured Data 2: FAQPage (Schema.org for Google Search Rich Results) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Який реальний час прибуття групи швидкого реагування (ГШР)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Залежно від району Києва, часу доби та завантаженості доріг, середній час прибуття складає від 7 до 15 хвилин. Патрульні екіпажі рівномірно розподілені по секторах правого та лівого берега Києва."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Як забезпечується конфіденційність та захист даних (NDA)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ми підписуємо суворий договір про нерозголошення (NDA) перед початком будь-якої співпраці. Персональні дані клієнта, маршрути пересувань та комерційна інформація мають статус суворо обмеженого доступу."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Як швидко можна виставити пост або надати супровід?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Для термінових завдань екіпаж може виїхати протягом 1–2 годин після підтвердження заявки. Комплексні проекти зі стаціонарними постами запускаються за 24–48 годин."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Яку матеріальну та юридичну відповідальність несе компанія?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Кожен офіційний договір закріплює персональну юридичну та матеріальну відповідальність IRON SECURITY за збереження довіреного майна згідно з актом прийому-передачі обʼєкта."
+          }
+        }
+      ]
     }
     </script>
   </head>

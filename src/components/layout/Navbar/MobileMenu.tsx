@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Phone } from 'lucide-react';
 import { companyInfo } from '../../../data/companyInfo';
+import { prefersReducedMotion } from '../../../lib/media';
 import { NAV_ITEMS, smoothScrollToSection } from './nav.constants';
 
 interface MobileMenuProps {
@@ -10,6 +11,16 @@ interface MobileMenuProps {
 
 export const MobileMenu: React.FC<MobileMenuProps> = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(() => prefersReducedMotion());
+
+  // Плавное появление мобильного бара синхронно с интро Hero
+  useEffect(() => {
+    if (prefersReducedMotion()) return;
+    const timer = setTimeout(() => {
+      setIsMounted(true);
+    }, 600);
+    return () => clearTimeout(timer);
+  }, []);
 
   // Блокировка скролла страницы при открытом мобильном меню
   useEffect(() => {
@@ -42,8 +53,16 @@ export const MobileMenu: React.FC<MobileMenuProps> = () => {
       {/* ── Единый фиксированный контейнер с гарантированным зазором (gap) ── */}
       <div className="fixed top-6 inset-x-6 sm:inset-x-8 sm:max-w-[360px] z-[90] flex flex-col gap-3.5 select-none pointer-events-none">
         
-        {/* ── 1. Верхняя панель (чистый Tailwind CSS, без бордеров) ─────────── */}
-        <div className="pointer-events-auto relative w-full rounded-[20px] bg-gradient-to-r from-[#080e1c]/95 via-[#0c1834]/95 to-[#0e1424]/95 shadow-[0_25px_60px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.22),0_0_25px_rgba(37,99,235,0.16)] backdrop-blur-3xl p-3 sm:p-3.5 flex items-center justify-between overflow-hidden">
+        {/* ── 1. Верхняя панель (с плавной анимацией появления при загрузке) ── */}
+        <div
+          style={{
+            transition:
+              'transform 900ms cubic-bezier(0.19, 1, 0.22, 1), opacity 750ms ease',
+            transform: isMounted ? 'translateY(0)' : 'translateY(-24px)',
+            opacity: isMounted ? 1 : 0,
+          }}
+          className="pointer-events-auto relative w-full rounded-[20px] bg-gradient-to-r from-[#080e1c]/95 via-[#0c1834]/95 to-[#0e1424]/95 shadow-[0_25px_60px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.22),0_0_25px_rgba(37,99,235,0.16)] backdrop-blur-3xl p-3 sm:p-3.5 flex items-center justify-between overflow-hidden will-change-transform"
+        >
           {/* Блик по верхней грани */}
           <div className="pointer-events-none absolute top-0 inset-x-6 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent z-10" />
 
