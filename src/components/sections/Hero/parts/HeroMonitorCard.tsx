@@ -86,15 +86,14 @@ export const HeroMonitorCard: React.FC<HeroMonitorCardProps> = ({ onOrderClick }
         </Button>
       </div>
 
-      <div className="relative w-22 h-22 sm:w-24 sm:h-24 rounded-2xl overflow-hidden shrink-0 bg-black/60 shadow-[0_10px_25px_rgba(0,0,0,0.6)] mr-1">
+      <div className="relative w-26 h-26 sm:w-28 sm:h-28 shrink-0 flex items-center justify-center self-center -mr-1">
         <img
-          src="/images/camera_guard.png"
-          alt="Оператор відеоспостереження IRON SECURITY"
+          src="/images/card-video-surveillance.png"
+          alt="Відеомоніторинг IRON SECURITY"
           loading="lazy"
           decoding="async"
-          className="w-full h-full object-cover contrast-110 brightness-95 group-hover/card:scale-105 transition-transform duration-500"
+          className="w-full h-full object-contain contrast-105 brightness-100 group-hover/card:scale-105 transition-transform duration-500"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
       </div>
     </div>
   </article>

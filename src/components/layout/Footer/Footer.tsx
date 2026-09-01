@@ -121,7 +121,7 @@ export const Footer: React.FC = () => {
 
   return (
     <footer id="footer" ref={footerRef} className="relative w-full px-[15px] pb-[15px] pt-2 text-zinc-400 select-none">
-      <div className="relative w-full rounded-[20px] bg-[#0c0e14] overflow-hidden pt-16 sm:pt-20 pb-10 px-6 sm:px-10 md:px-14 lg:px-16">
+      <div className="relative w-full rounded-[20px] bg-[#0c0e14] overflow-hidden pt-14 sm:pt-20 pb-8 sm:pb-10 px-4 sm:px-10 md:px-14 lg:px-16">
         
         {/* Фоновое атмосферное свечение */}
         <div

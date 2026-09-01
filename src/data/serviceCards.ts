@@ -19,7 +19,7 @@ export const SERVICE_CARDS: ServiceCardData[] = [
     highlightWord: 'ОХОРОНА',
     shortDesc:
       'Персональний фізичний захист перших осіб, топ-менеджерів та їхніх родин. Наші співробітники — майстри спорту з тактичною та вогнепальною підготовкою. Забезпечуємо повний превентивний контроль маршрутів, протокольний супровід на заходах та суворе дотримання 100% NDA.',
-    image: '/images/service_vip_bodyguard.png',
+    image: '/images/service_vip_bodyguard.webp',
   },
   {
     id: 'object-security',
@@ -29,7 +29,7 @@ export const SERVICE_CARDS: ServiceCardData[] = [
     highlightWord: 'НЕРУХОМОСТІ',
     shortDesc:
       'Цілодобовий фізичний та периметральний контроль заміських резиденцій, маєтків, котеджних містечок та логістичних комплексів. Облаштовуємо контрольно-пропускні пункти, проводимо регулярне патрулювання території та унеможливлюємо несанкціоноване проникнення.',
-    image: '/images/service_object_security.png',
+    image: '/images/service_object_security.webp',
   },
   {
     id: 'business-security',
@@ -39,7 +39,7 @@ export const SERVICE_CARDS: ServiceCardData[] = [
     highlightWord: 'БІЗНЕСУ',
     shortDesc:
       'Комплексна безпека бізнес-центрів, корпоративних офісів, фінансових установ та ТРЦ. Впроваджуємо електронні системи контролю доступу (СКУД), фейс-контроль відвідувачів, проводимо аудит вразливостей і захищаємо компанію від витоку комерційної таємниці.',
-    image: '/images/service_business_security.png',
+    image: '/images/service_business_security.webp',
   },
   {
     id: 'alarm-response',
@@ -49,6 +49,6 @@ export const SERVICE_CARDS: ServiceCardData[] = [
     highlightWord: 'ПУЛЬТОВА',
     shortDesc:
       'Підключення обʼєктів до єдиного цілодобового ситуаційного центру моніторингу в Києві та області. У разі спрацювання датчиків тривоги екіпаж озброєної групи швидкого реагування прибуває на місце за регламентом до 10 хвилин і бере периметр під повний контроль.',
-    image: '/images/service_alarm_response.png',
+    image: '/images/service_alarm_response.webp',
   },
 ];

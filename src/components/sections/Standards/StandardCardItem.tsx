@@ -137,12 +137,25 @@ export const StandardCardItem: React.FC<StandardCardItemProps> = ({ item }) => {
     gsap.to(numberRef.current, { color: '#0f1115', duration: 0.3, overwrite: 'auto' });
   };
 
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  const handleToggle = () => {
+    if (isOpen) {
+      handleMouseLeave();
+      setIsOpen(false);
+    } else {
+      handleMouseEnter();
+      setIsOpen(true);
+    }
+  };
+
   return (
     <article
       ref={cardRef}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="group relative flex flex-col h-[340px] sm:h-[370px] rounded-[20px] bg-[#0c0e14] border border-blue-500/35 hover:border-blue-400/80 overflow-hidden shadow-[0_0_35px_rgba(37,99,235,0.25),0_15px_35px_rgba(0,0,0,0.5)] hover:shadow-[0_0_65px_rgba(59,130,246,0.55),0_20px_45px_rgba(0,0,0,0.8)] transition-[border-color,box-shadow] duration-500 isolate transform-gpu select-none"
+      onClick={handleToggle}
+      className="group relative flex flex-col h-[320px] sm:h-[370px] rounded-[20px] bg-[#0c0e14] border border-blue-500/35 hover:border-blue-400/80 overflow-hidden shadow-[0_0_35px_rgba(37,99,235,0.25),0_15px_35px_rgba(0,0,0,0.5)] hover:shadow-[0_0_65px_rgba(59,130,246,0.55),0_20px_45px_rgba(0,0,0,0.8)] transition-[border-color,box-shadow] duration-500 isolate transform-gpu select-none cursor-pointer"
     >
       {/* Верхняя неоновая линия-блик */}
       <div className="pointer-events-none absolute top-0 inset-x-8 h-[1.5px] bg-gradient-to-r from-transparent via-blue-400/70 to-transparent z-10" />

@@ -128,12 +128,25 @@ export const CenterpieceCardItem: React.FC<CenterpieceCardItemProps> = ({ onOrde
     gsap.to(badgeRef.current, { color: '#0f1115', duration: 0.3, overwrite: 'auto' });
   };
 
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  const handleToggle = () => {
+    if (isOpen) {
+      handleMouseLeave();
+      setIsOpen(false);
+    } else {
+      handleMouseEnter();
+      setIsOpen(true);
+    }
+  };
+
   return (
     <article
       ref={cardRef}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="group relative flex flex-col h-[340px] sm:h-[370px] rounded-[20px] bg-[#0c0e14] border border-blue-400/50 hover:border-blue-300 overflow-hidden shadow-[0_0_45px_rgba(59,130,246,0.35),0_20px_45px_rgba(0,0,0,0.6)] hover:shadow-[0_0_75px_rgba(59,130,246,0.65),0_25px_50px_rgba(0,0,0,0.85)] transition-[border-color,box-shadow] duration-500 isolate transform-gpu select-none"
+      onClick={handleToggle}
+      className="group relative flex flex-col h-[320px] sm:h-[370px] rounded-[20px] bg-[#0c0e14] border border-blue-400/50 hover:border-blue-300 overflow-hidden shadow-[0_0_45px_rgba(59,130,246,0.35),0_20px_45px_rgba(0,0,0,0.6)] hover:shadow-[0_0_75px_rgba(59,130,246,0.65),0_25px_50px_rgba(0,0,0,0.85)] transition-[border-color,box-shadow] duration-500 isolate transform-gpu select-none cursor-pointer"
     >
       {/* Верхняя неоновая линия-блик */}
       <div className="pointer-events-none absolute top-0 inset-x-8 h-[1.5px] bg-gradient-to-r from-transparent via-blue-300 to-transparent z-10" />

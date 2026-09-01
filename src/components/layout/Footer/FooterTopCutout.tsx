@@ -28,7 +28,7 @@ export const FooterTopCutout = forwardRef<HTMLDivElement, FooterTopCutoutProps>(
     return (
       <div
         ref={ref}
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-[440px] sm:w-[540px] md:w-[580px] h-[48px] sm:h-[54px] pointer-events-auto origin-top z-20 will-change-transform"
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-[92vw] max-w-[340px] sm:max-w-none sm:w-[540px] md:w-[580px] h-[44px] sm:h-[54px] pointer-events-auto origin-top z-20 will-change-transform"
       >
         <svg
           viewBox="0 0 620 58"
@@ -47,15 +47,15 @@ export const FooterTopCutout = forwardRef<HTMLDivElement, FooterTopCutoutProps>(
         <button
           type="button"
           onClick={onScrollToTop}
-          className="roller-host group/top absolute inset-0 flex items-center justify-center gap-2.5 text-[11px] sm:text-xs font-mono font-bold uppercase tracking-widest text-[#0f1115] hover:text-blue-700 cursor-pointer transition-colors pb-1"
+          className="roller-host group/top absolute inset-0 flex items-center justify-center gap-1.5 sm:gap-2.5 text-[10px] sm:text-xs font-mono font-bold uppercase tracking-widest text-[#0f1115] hover:text-blue-700 cursor-pointer transition-colors pb-1 active:scale-95"
         >
-          <TacticalArrowUp className="w-3.5 h-3.5 text-[#0f1115] group-hover/top:text-blue-700 transition-all duration-300 transform group-hover/top:-translate-y-1" />
+          <TacticalArrowUp className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#0f1115] group-hover/top:text-blue-700 transition-all duration-300 transform group-hover/top:-translate-y-1" />
           <LetterRoller
             text="ПОВЕРНУТИСЯ ВГОРУ"
             restClassName="text-[#0f1115] font-bold"
             hoverClassName="text-blue-700 font-bold"
           />
-          <TacticalArrowUp className="w-3.5 h-3.5 text-[#0f1115] group-hover/top:text-blue-700 transition-all duration-300 transform group-hover/top:-translate-y-1" />
+          <TacticalArrowUp className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#0f1115] group-hover/top:text-blue-700 transition-all duration-300 transform group-hover/top:-translate-y-1" />
         </button>
       </div>
     );

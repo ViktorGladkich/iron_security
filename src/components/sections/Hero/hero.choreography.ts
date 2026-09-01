@@ -100,7 +100,7 @@ export const INTRO_STEPS: IntroStep[] = [
 ];
 
 /** Слои, которые стоит промоутить на время интро и отпустить после него. */
-export const PROMOTED_DURING_INTRO = [sel.frame, sel.operative, sel.card, sel.statsBar].join(', ');
+export const PROMOTED_DURING_INTRO = [sel.frame, sel.operative, sel.card, sel.statsBar, sel.offerItem].join(', ');
 
 /**
  * Потолок ожидания шрифтов и картинок перед стартом интро.

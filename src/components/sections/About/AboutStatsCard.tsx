@@ -11,13 +11,13 @@ export const AboutStatsCard = forwardRef<HTMLDivElement, AboutStatsCardProps>(
     return (
       <div
         ref={ref}
-        className="relative z-10 p-6 sm:p-8 lg:p-5 xl:p-6 lg:shrink-0 rounded-2xl bg-white/[0.02] border border-blue-600/40 shadow-[0_10px_30px_rgba(29,78,216,0.15)] flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-6"
+        className="relative z-10 p-5 sm:p-8 lg:p-5 xl:p-6 lg:shrink-0 rounded-2xl bg-white/[0.02] border border-blue-600/40 shadow-[0_10px_30px_rgba(29,78,216,0.15)] flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-8 lg:gap-6"
       >
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 w-full lg:w-auto">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 w-full lg:w-auto">
           {STATS.map((stat) => (
             <div key={stat.label} className="about-stat-box">
               <div
-                className={`font-tactical font-semibold text-2xl sm:text-3xl lg:text-2xl xl:text-3xl tracking-tight mb-1 flex items-center gap-1 ${
+                className={`font-tactical font-semibold text-xl sm:text-3xl lg:text-2xl xl:text-3xl tracking-tight mb-1 flex items-center gap-1 ${
                   stat.accent ? ACCENT_GRADIENT : 'text-white'
                 }`}
               >
@@ -26,7 +26,7 @@ export const AboutStatsCard = forwardRef<HTMLDivElement, AboutStatsCardProps>(
                   <span className={`${ACCENT_GRADIENT} font-bold`}>{stat.suffix}</span>
                 )}
               </div>
-              <div className="font-mono text-[10.5px] uppercase tracking-wider text-zinc-400">
+              <div className="font-mono text-[10px] sm:text-[10.5px] uppercase tracking-wider text-zinc-400">
                 {stat.label}
               </div>
             </div>

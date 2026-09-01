@@ -17,7 +17,7 @@ export const ReviewsControls = forwardRef<HTMLDivElement, ReviewsControlsProps>(
         {/* Счётчик слайдов: статичный "0" + вращающаяся только вторая цифра */}
         <div
           ref={counterRef}
-          className="flex items-center font-tactical font-bold text-3xl sm:text-4xl lg:text-[44px] text-[#0f1115] leading-none tracking-tight will-change-transform"
+          className="flex items-center font-tactical font-bold text-2xl sm:text-4xl lg:text-[44px] text-[#0f1115] leading-none tracking-tight will-change-transform"
         >
           {/* Статичный ноль на месте */}
           <span>0</span>
@@ -39,7 +39,7 @@ export const ReviewsControls = forwardRef<HTMLDivElement, ReviewsControlsProps>(
             </div>
           </div>
 
-          <span className="mx-1.5 text-[#0f1115] transform rotate-[15deg] font-light text-2xl sm:text-3xl lg:text-4xl font-sans">
+          <span className="mx-1 sm:mx-1.5 text-[#0f1115] transform rotate-[15deg] font-light text-xl sm:text-3xl lg:text-4xl font-sans">
             /
           </span>
 
@@ -49,13 +49,13 @@ export const ReviewsControls = forwardRef<HTMLDivElement, ReviewsControlsProps>(
         </div>
 
         {/* Градиентные навигационные кнопки вровень с нижним краем карточек */}
-        <div ref={buttonsRef} className="flex items-center gap-3 will-change-transform">
+        <div ref={buttonsRef} className="flex items-center gap-2 sm:gap-3 will-change-transform">
           {/* Кнопка PREV */}
           <button
             type="button"
             onClick={onPrev}
             aria-label="Попередній відгук"
-            className="group/btn relative w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-r from-[#081d45] via-[#1d4ed8] to-[#0284c7] text-white flex items-center justify-center transition-all duration-300 shadow-[0_8px_25px_rgba(37,99,235,0.35)] hover:shadow-[0_12px_35px_rgba(37,99,235,0.55)] active:scale-95 cursor-pointer overflow-hidden isolate"
+            className="group/btn relative w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-r from-[#081d45] via-[#1d4ed8] to-[#0284c7] text-white flex items-center justify-center transition-all duration-300 shadow-[0_8px_25px_rgba(37,99,235,0.35)] hover:shadow-[0_12px_35px_rgba(37,99,235,0.55)] active:scale-95 cursor-pointer overflow-hidden isolate"
           >
             <span className="absolute inset-0 z-0 pointer-events-none -translate-x-full group-hover/btn:translate-x-0 transition-transform duration-400 ease-[cubic-bezier(0.65,0,0.35,1)] bg-[#0f1115]" />
 
@@ -63,7 +63,7 @@ export const ReviewsControls = forwardRef<HTMLDivElement, ReviewsControlsProps>(
               viewBox="0 0 24 14"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="relative z-10 w-5 h-3 text-white transition-transform duration-300 group-hover/btn:-translate-x-1"
+              className="relative z-10 w-4.5 h-2.5 sm:w-5 sm:h-3 text-white transition-transform duration-300 group-hover/btn:-translate-x-1"
             >
               <path
                 d="M22 7H2M2 7L7.5 1.5M2 7L7.5 12.5"
@@ -87,7 +87,7 @@ export const ReviewsControls = forwardRef<HTMLDivElement, ReviewsControlsProps>(
             type="button"
             onClick={onNext}
             aria-label="Наступний відгук"
-            className="group/btn relative w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-r from-[#081d45] via-[#1d4ed8] to-[#0284c7] text-white flex items-center justify-center transition-all duration-300 shadow-[0_8px_25px_rgba(37,99,235,0.35)] hover:shadow-[0_12px_35px_rgba(37,99,235,0.55)] active:scale-95 cursor-pointer overflow-hidden isolate"
+            className="group/btn relative w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-r from-[#081d45] via-[#1d4ed8] to-[#0284c7] text-white flex items-center justify-center transition-all duration-300 shadow-[0_8px_25px_rgba(37,99,235,0.35)] hover:shadow-[0_12px_35px_rgba(37,99,235,0.55)] active:scale-95 cursor-pointer overflow-hidden isolate"
           >
             <span className="absolute inset-0 z-0 pointer-events-none -translate-x-full group-hover/btn:translate-x-0 transition-transform duration-400 ease-[cubic-bezier(0.65,0,0.35,1)] bg-[#0f1115]" />
 
@@ -95,7 +95,7 @@ export const ReviewsControls = forwardRef<HTMLDivElement, ReviewsControlsProps>(
               viewBox="0 0 24 14"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="relative z-10 w-5 h-3 text-white transition-transform duration-300 group-hover/btn:translate-x-1"
+              className="relative z-10 w-4.5 h-2.5 sm:w-5 sm:h-3 text-white transition-transform duration-300 group-hover/btn:translate-x-1"
             >
               <path
                 d="M2 7H22M22 7L16.5 1.5M22 7L16.5 12.5"

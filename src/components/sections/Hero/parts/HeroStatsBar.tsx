@@ -2,9 +2,9 @@ import React from 'react';
 
 import { HERO_STATS, hx } from '../hero.constants';
 
-/** Правый нижний SVG-вырез со скошенным углом и тремя ключевыми метриками. */
+/** Правый нижний SVG-вырез со скошенным углом и тремя ключевыми метриками (на sm+ экранах). */
 export const HeroStatsBar: React.FC = () => (
-  <div className={`${hx.statsBar} absolute bottom-0 right-0 z-30 w-[430px] sm:w-[540px] h-[82px] sm:h-[90px]`}>
+  <div className={`${hx.statsBar} hidden sm:block absolute bottom-0 right-0 z-30 w-[430px] md:w-[540px] h-[82px] md:h-[90px]`}>
     <svg
       viewBox="0 0 540 90"
       fill="none"

@@ -68,7 +68,7 @@ export const Button: React.FC<ButtonProps> = ({
         variant === 'gradient'
           ? 'shadow-[0_8px_25px_rgba(37,99,235,0.35)] hover:shadow-[0_12px_35px_rgba(37,99,235,0.55)]'
           : 'shadow-[0_10px_25px_rgba(0,0,0,0.3)] hover:shadow-[0_15px_35px_rgba(37,99,235,0.35)]',
-        'transition-all duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400',
+        'transition-[box-shadow,background-color,border-color,outline-color] duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400',
         SIZE_STYLES[size],
         palette.surface,
         palette.rest,

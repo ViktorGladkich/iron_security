@@ -1,7 +1,8 @@
 import React, { Suspense, lazy, useCallback, useState } from 'react';
 
-import { Footer } from './components/layout/Footer';
-import { Hero } from './components/sections/Hero';
+import { Footer } from './components/layout/Footer/Footer';
+import { Navbar } from './components/layout/Navbar/Navbar';
+import { Hero } from './components/sections/Hero/Hero';
 import { useInView } from './hooks/useInView';
 
 /**
@@ -36,6 +37,9 @@ export const App: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-[#f2f4f7] text-[#0f1115] selection:bg-black selection:text-white">
+      {/* Глобальная плавающая навигация + мобильное тактическое меню */}
+      <Navbar onOrderClick={openOrder} />
+
       <main className="flex-1">
         <Hero onOrderClick={openOrder} onIntroComplete={settleHero} />
 

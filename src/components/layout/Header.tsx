@@ -27,26 +27,26 @@ const scrollToSection = (event: React.MouseEvent<HTMLAnchorElement>, href: strin
   target.scrollIntoView({ behavior: 'smooth' });
 };
 
-/** Шапка внутри фрейма Hero: логотип, трапециевидный SVG-вырез с меню, телефон. */
+/** Шапка внутри фрейма Hero: логотип, трапециевидный SVG-вырез с меню (на планшетах/десктопе), телефон. */
 export const Header: React.FC<HeaderProps> = () => (
-  <header className="absolute top-0 inset-x-0 z-30 px-6 sm:px-8 py-4 sm:py-5 flex items-center justify-between pointer-events-auto">
-    <a href="#" className={`${hx.headerSide} flex items-center gap-2.5 sm:gap-3 group`}>
+  <header className="hidden lg:flex absolute top-0 inset-x-0 z-30 px-4 sm:px-8 py-3.5 sm:py-5 items-center justify-between pointer-events-auto">
+    <a href="#" className={`${hx.headerSide} flex items-center gap-2 sm:gap-3 group`}>
       <img
         src="/images/iron_shield_icon.png"
         alt="IRON SECURITY"
         width={137}
         height={160}
-        className="h-7 sm:h-8 w-auto object-contain drop-shadow-[0_0_10px_rgba(255,255,255,0.25)] transition-transform duration-300 group-hover:scale-105"
+        className="h-6 sm:h-8 w-auto object-contain drop-shadow-[0_0_10px_rgba(255,255,255,0.25)] transition-transform duration-300 group-hover:scale-105"
       />
-      <span className="font-display font-medium text-sm sm:text-base tracking-wider text-zinc-300 leading-none transition-colors group-hover:text-white">
+      <span className="font-display font-medium text-xs sm:text-base tracking-wider text-zinc-300 leading-none transition-colors group-hover:text-white">
         IRON SECURITY
       </span>
     </a>
 
+    {/* Трапециевидный вырез меню — адаптирован под md+ экраны */}
     <div
-      className={`${hx.headerCutout} absolute top-0 left-1/2 -translate-x-1/2 w-[480px] sm:w-[620px] h-[52px] sm:h-[58px] pointer-events-auto origin-top`}
+      className={`${hx.headerCutout} hidden md:block absolute top-0 left-1/2 -translate-x-1/2 w-[480px] sm:w-[620px] h-[52px] sm:h-[58px] pointer-events-auto origin-top`}
     >
-      {/* Трапециевидный вырез с широкой ровной нижней гранью */}
       <svg
         viewBox="0 0 620 58"
         fill="none"
@@ -79,13 +79,15 @@ export const Header: React.FC<HeaderProps> = () => (
       </nav>
     </div>
 
+    {/* Кнопка телефона: компактная на мобильных, полная на десктопе */}
     <div className={`${hx.headerSide} flex items-center`}>
       <a
         href={`tel:${companyInfo.phone.replace(/[^+\d]/g, '')}`}
-        className="hidden sm:flex items-center gap-2 text-xs font-mono text-zinc-300 hover:text-white transition-colors"
+        className="flex items-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs font-mono text-zinc-300 hover:text-white transition-colors bg-white/10 sm:bg-transparent px-3 py-1.5 sm:px-0 sm:py-0 rounded-full border border-white/15 sm:border-0 active:scale-95"
       >
-        <Phone className="w-3.5 h-3.5 text-blue-400" />
-        <span>{companyInfo.phoneDisplay}</span>
+        <Phone className="w-3.5 h-3.5 text-blue-400 shrink-0" />
+        <span className="hidden sm:inline">{companyInfo.phoneDisplay}</span>
+        <span className="sm:hidden font-sans font-medium uppercase tracking-wide">Дзвінок</span>
       </a>
     </div>
   </header>
