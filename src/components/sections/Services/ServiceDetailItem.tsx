@@ -10,7 +10,7 @@ interface ServiceDetailItemProps {
 
 export const ServiceDetailItem: React.FC<ServiceDetailItemProps> = ({ service, onOrderClick }) => {
   return (
-    <div className="min-h-[50vh] md:min-h-[85vh] flex flex-col justify-center py-6 sm:py-8 md:py-14 first:pt-0 last:pb-12">
+    <div className="service-detail-item min-h-[50vh] md:min-h-[85vh] flex flex-col justify-center py-6 sm:py-8 md:py-14 first:pt-0 last:pb-12 will-change-transform">
       <div className="max-w-lg">
         {/* Заголовок послуги */}
         <h3 className="font-['PP_Neue_Montreal'] font-medium text-2xl sm:text-4xl lg:text-[40px] leading-[1.15] text-[#0f1115] uppercase tracking-tight mb-3 sm:mb-4">

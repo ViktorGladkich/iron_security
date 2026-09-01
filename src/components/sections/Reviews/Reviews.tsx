@@ -3,11 +3,13 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+import { REVIEWS_DATA } from '../../../data/reviews';
 import { prefersReducedMotion } from '../../../lib/media';
 import { useReviewsCarousel } from './useReviewsCarousel';
 import { ReviewsHeader } from './ReviewsHeader';
 import { ReviewsControls } from './ReviewsControls';
 import { ReviewsTrack } from './ReviewsTrack';
+import { ReviewCard } from './ReviewCard';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -37,7 +39,7 @@ export const Reviews: React.FC = () => {
     handleMouseUp,
   } = useReviewsCarousel();
 
-  // ── GSAP ScrollTrigger Fast & Crisp Entrance Animation ───────────────────
+  // ── GSAP ScrollTrigger Entrance & Mobile Cards Animation ─────────────────
   useGSAP(
     () => {
       if (prefersReducedMotion()) return;
@@ -72,7 +74,7 @@ export const Reviews: React.FC = () => {
         },
         '-=0.4'
       )
-      // 3. Счётчик и кнопки управления
+      // 3. Счётчик и кнопки управления (для десктопа)
       .from(
         [counterRef.current, buttonsRef.current],
         {
@@ -86,7 +88,7 @@ export const Reviews: React.FC = () => {
         '-=0.4'
       );
 
-      // 4. Карточки отзывов
+      // 4. Десктопный трек карточек
       if (trackRef.current && trackRef.current.children.length > 0) {
         tl.from(
           trackRef.current.children,
@@ -101,6 +103,25 @@ export const Reviews: React.FC = () => {
           },
           '-=0.45'
         );
+      }
+
+      // 5. Мобильные карточки (плавное поочередное появление при скролле)
+      const mobileCards = gsap.utils.toArray<HTMLElement>('.review-mobile-card', sectionRef.current);
+      if (mobileCards.length > 0) {
+        mobileCards.forEach((card) => {
+          gsap.from(card, {
+            scrollTrigger: {
+              trigger: card,
+              start: 'top 88%',
+              once: true,
+            },
+            opacity: 0,
+            y: 24,
+            duration: 0.55,
+            ease: 'power2.out',
+            clearProps: 'transform,opacity',
+          });
+        });
       }
     },
     { scope: sectionRef }
@@ -122,10 +143,31 @@ export const Reviews: React.FC = () => {
           borderRef={borderRef}
         />
 
-        {/* 2. Структура: Левая панель управления + Правый трек карточек */}
+        {/* 2. Мобильный вертикальный стек карточек (друг за другом без карусели) */}
+        <div className="lg:hidden flex flex-col gap-4 sm:gap-5 w-full mt-2">
+          {REVIEWS_DATA.map((item, idx) => (
+            <div
+              key={item.id}
+              className="review-mobile-card w-full"
+            >
+              <ReviewCard
+                item={{
+                  ...item,
+                  extKey: `mobile-${item.id}`,
+                  realIndex: idx,
+                }}
+                isActive={true}
+                onSelect={() => {}}
+                className="w-full"
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* 3. Десктопная карусель (на экранах ≥ 1024px) */}
         <div
           ref={carouselContainerRef}
-          className="relative z-10 flex flex-col lg:flex-row gap-6 lg:gap-8 xl:gap-10 items-stretch"
+          className="hidden lg:flex relative z-10 flex-row gap-6 lg:gap-8 xl:gap-10 items-stretch"
         >
           {/* Левая панель управления */}
           <ReviewsControls

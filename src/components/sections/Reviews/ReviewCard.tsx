@@ -5,15 +5,24 @@ interface ReviewCardProps {
   item: ExtendedReviewItem;
   isActive: boolean;
   onSelect: () => void;
+  className?: string;
 }
 
-export const ReviewCard: React.FC<ReviewCardProps> = ({ item, isActive, onSelect }) => {
+export const ReviewCard: React.FC<ReviewCardProps> = ({
+  item,
+  isActive,
+  onSelect,
+  className,
+}) => {
   const radialGrad = CARD_RADIAL_GRADIENTS[item.gradientClass] || CARD_RADIAL_GRADIENTS.c1;
 
   return (
     <div
       onClick={onSelect}
-      className="w-[84vw] max-w-[340px] sm:max-w-none sm:w-[380px] lg:w-[420px] xl:w-[460px] shrink-0 cursor-pointer"
+      className={
+        className ||
+        'w-[84vw] max-w-[340px] sm:max-w-none sm:w-[380px] lg:w-[420px] xl:w-[460px] shrink-0 cursor-pointer'
+      }
     >
       <article
         style={{
@@ -22,7 +31,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ item, isActive, onSelect
           boxShadow:
             'inset 0 1px 0 rgba(255,255,255,.42), inset 0 22px 46px -26px rgba(255,255,255,.25), 0 20px 40px -20px rgba(0,0,0,0.3)',
         }}
-        className={`group relative h-[360px] sm:h-[400px] p-6 sm:p-8 rounded-[24px] border flex flex-col justify-between overflow-hidden isolate select-none transition-[border-color,box-shadow] duration-500 ${
+        className={`group relative min-h-[260px] sm:min-h-[280px] lg:h-[380px] sm:lg:h-[400px] p-6 sm:p-8 rounded-[24px] border flex flex-col justify-between overflow-hidden isolate select-none transition-[border-color,box-shadow] duration-500 ${
           isActive ? 'border-white/35 ring-1 ring-white/20' : 'border-white/[0.18] hover:border-white/30'
         }`}
       >
@@ -56,12 +65,12 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ item, isActive, onSelect
         </div>
 
         {/* ── Текст цитати відгуку ─────────────────────────────── */}
-        <blockquote className="relative z-10 mt-4 sm:mt-7 font-sans text-sm sm:text-lg lg:text-[18px] font-medium leading-[1.44] tracking-tight text-white max-w-[34ch]">
+        <blockquote className="relative z-10 my-4 sm:my-5 font-sans text-sm sm:text-base lg:text-[18px] font-medium leading-[1.44] tracking-tight text-white max-w-[34ch]">
           {item.quote}
         </blockquote>
 
         {/* ── Автор відгуку ────────────────────────────────────── */}
-        <div className="relative z-10 mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-white/20 flex flex-wrap items-baseline gap-1.5 sm:gap-2">
+        <div className="relative z-10 mt-auto pt-3 sm:pt-4 border-t border-white/20 flex flex-wrap items-baseline gap-1.5 sm:gap-2">
           <span className="font-['PP_Neue_Montreal'] text-sm sm:text-[14.5px] font-bold tracking-tight text-white">
             {item.name}
           </span>
