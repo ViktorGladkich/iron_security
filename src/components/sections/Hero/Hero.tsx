@@ -11,7 +11,7 @@ import { HeroOffer } from './parts/HeroOffer';
 import { HeroOperative } from './parts/HeroOperative';
 import { HeroStatsBar } from './parts/HeroStatsBar';
 
-interface HeroProps {
+export interface HeroProps {
   onOrderClick?: () => void;
   /** Вступление отыграло — главный поток свободен под тяжёлые секции ниже. */
   onIntroComplete?: () => void;
