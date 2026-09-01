@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Phone } from 'lucide-react';
 import { companyInfo } from '../../../data/companyInfo';
 import { prefersReducedMotion } from '../../../lib/media';
@@ -12,6 +12,8 @@ interface MobileMenuProps {
 export const MobileMenu: React.FC<MobileMenuProps> = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(() => prefersReducedMotion());
+  const [isVisible, setIsVisible] = useState(true);
+  const lastScrollYRef = useRef(0);
 
   // Плавное появление мобильного бара синхронно с интро Hero
   useEffect(() => {
@@ -22,7 +24,39 @@ export const MobileMenu: React.FC<MobileMenuProps> = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  // Блокировка скролла страницы при открытом мобильном меню
+  // Умный скролл: скрытие при скролле вниз, появление при скролле вверх
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const prevScrollY = lastScrollYRef.current;
+      const delta = currentScrollY - prevScrollY;
+
+      // Если мобильное меню открыто — не скрываем
+      if (isOpen) {
+        setIsVisible(true);
+        lastScrollYRef.current = currentScrollY;
+        return;
+      }
+
+      // В верхней зоне экрана (Hero) бар всегда видим
+      if (currentScrollY < 60) {
+        setIsVisible(true);
+      } else if (delta > 8 && currentScrollY > 120) {
+        // Скроллим вниз — скрываем бар для максимального обзора
+        setIsVisible(false);
+      } else if (delta < -8) {
+        // Скроллим вверх — моментально и плавно возвращаем меню
+        setIsVisible(true);
+      }
+
+      lastScrollYRef.current = currentScrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [isOpen]);
+
+  // Блокировка скролла страницы при открытом выпадающем меню
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -50,19 +84,23 @@ export const MobileMenu: React.FC<MobileMenuProps> = () => {
         aria-hidden="true"
       />
 
-      {/* ── Единый фиксированный контейнер с гарантированным зазором (gap) ── */}
-      <div className="fixed top-6 inset-x-6 sm:inset-x-8 sm:max-w-[360px] z-[90] flex flex-col gap-3.5 select-none pointer-events-none">
+      {/* ── Единый фиксированный контейнер с кинетическим умным скроллом ── */}
+      <div
+        style={{
+          transition:
+            'transform 480ms cubic-bezier(0.16, 1, 0.3, 1), opacity 380ms ease',
+          transform: isMounted
+            ? isVisible || isOpen
+              ? 'translateY(0)'
+              : 'translateY(-140%)'
+            : 'translateY(-24px)',
+          opacity: isMounted ? (isVisible || isOpen ? 1 : 0) : 0,
+        }}
+        className="fixed top-6 inset-x-6 sm:inset-x-8 sm:max-w-[360px] z-[90] flex flex-col gap-3.5 select-none pointer-events-none will-change-transform"
+      >
         
-        {/* ── 1. Верхняя панель (с плавной анимацией появления при загрузке) ── */}
-        <div
-          style={{
-            transition:
-              'transform 900ms cubic-bezier(0.19, 1, 0.22, 1), opacity 750ms ease',
-            transform: isMounted ? 'translateY(0)' : 'translateY(-24px)',
-            opacity: isMounted ? 1 : 0,
-          }}
-          className="pointer-events-auto relative w-full rounded-[20px] bg-gradient-to-r from-[#080e1c]/95 via-[#0c1834]/95 to-[#0e1424]/95 shadow-[0_25px_60px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.22),0_0_25px_rgba(37,99,235,0.16)] backdrop-blur-3xl p-3 sm:p-3.5 flex items-center justify-between overflow-hidden will-change-transform"
-        >
+        {/* ── 1. Верхняя панель (чистый Tailwind CSS, без бордеров) ─────────── */}
+        <div className="pointer-events-auto relative w-full rounded-[20px] bg-gradient-to-r from-[#080e1c]/95 via-[#0c1834]/95 to-[#0e1424]/95 shadow-[0_25px_60px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.22),0_0_25px_rgba(37,99,235,0.16)] backdrop-blur-3xl p-3 sm:p-3.5 flex items-center justify-between overflow-hidden">
           {/* Блик по верхней грани */}
           <div className="pointer-events-none absolute top-0 inset-x-6 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent z-10" />
 
