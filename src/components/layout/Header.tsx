@@ -83,7 +83,7 @@ export const Header: React.FC<HeaderProps> = () => (
     <div className={`${hx.headerSide} flex items-center`}>
       <a
         href={`tel:${companyInfo.phone.replace(/[^+\d]/g, '')}`}
-        className="flex items-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs font-mono text-zinc-300 hover:text-white transition-colors bg-white/10 sm:bg-transparent px-3 py-1.5 sm:px-0 sm:py-0 rounded-full border border-white/15 sm:border-0 active:scale-95"
+        className="flex items-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs font-mono text-zinc-300 hover:text-white transition-colors bg-white/10 sm:bg-transparent px-3 py-1.5 sm:px-0 sm:py-0 rounded-full active:scale-95"
       >
         <Phone className="w-3.5 h-3.5 text-blue-400 shrink-0" />
         <span className="hidden sm:inline">{companyInfo.phoneDisplay}</span>
