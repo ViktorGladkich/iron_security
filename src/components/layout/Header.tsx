@@ -15,6 +15,7 @@ const NAV_ITEMS = [
   { label: 'Про фірму', href: '#about' },
   { label: 'Послуги', href: '#services' },
   { label: 'Стандарти', href: '#standards' },
+  { label: 'Відгуки', href: '#reviews' },
   { label: 'FAQ', href: '#faq' },
   { label: 'Контакти', href: '#contacts' },
 ] as const;

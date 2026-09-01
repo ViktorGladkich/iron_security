@@ -3,6 +3,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import { About } from './About';
 import { FAQ } from './FAQ';
+import { Reviews } from './Reviews';
 import { Services } from './Services';
 import { Standards } from './Standards';
 import { STACK_ID, STACK_SCRUB_SVH } from './stack.constants';
@@ -29,6 +30,7 @@ export const AboutServicesStack: React.FC<AboutServicesStackProps> = ({ onOrderC
       <div className="relative z-10 bg-[#f2f4f7]">
         <Services onOrderClick={onOrderClick} />
         <Standards onOrderClick={onOrderClick} />
+        <Reviews />
         <FAQ onOrderClick={onOrderClick} />
       </div>
     </div>

@@ -110,38 +110,44 @@ export const FAQ: React.FC<FAQProps> = () => {
       ref={sectionRef}
       className="relative z-10 flex w-full items-center justify-center px-[15px] pb-[15px]"
     >
-      <div className="relative w-full rounded-[20px] bg-[#f2f4f7] overflow-hidden px-6 sm:px-10 md:px-14 lg:px-14 xl:px-16 py-16 sm:py-20 md:py-24 lg:py-20">
+      <div className="relative w-full rounded-[20px] bg-[#0c0e14] border border-blue-500/20 overflow-hidden px-6 sm:px-10 md:px-14 lg:px-14 xl:px-16 py-16 sm:py-20 md:py-24 lg:py-20">
         
+        {/* Верхняя неоновая линия-блик */}
+        <div className="pointer-events-none absolute top-0 inset-x-8 h-[1.5px] bg-gradient-to-r from-transparent via-blue-400/60 to-transparent z-10" />
+
+        {/* Фоновое атмосферное свечение */}
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(37,99,235,0.12)_0%,transparent_60%)]" />
+
         {/* ── Шапка секции на всю ширину ─────────────────────────────────── */}
         <header className="relative z-10 mb-12 sm:mb-16">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8">
             <div>
               <span
                 ref={badgeRef}
-                className="mb-2 block font-mono text-xs font-bold tracking-widest text-blue-600 uppercase sm:text-sm will-change-transform"
+                className="mb-2 block font-mono text-xs font-bold tracking-widest text-blue-400 uppercase sm:text-sm will-change-transform"
               >
-                04 // ЧАСТІ ЗАПИТАННЯ & РЕГЛАМЕНТ
+                05 // ЧАСТІ ЗАПИТАННЯ & РЕГЛАМЕНТ
               </span>
               <h2
                 ref={titleRef}
-                className="font-sans text-2xl font-normal tracking-tight text-[#0f1115] uppercase sm:text-3xl md:text-4xl will-change-transform"
+                className="font-sans text-2xl font-normal tracking-tight text-white uppercase sm:text-3xl md:text-4xl will-change-transform"
               >
                 ВІДПОВІДІ НА{' '}
-                <span className="bg-gradient-to-r from-[#081d45] via-[#1d4ed8] to-[#0284c7] bg-clip-text text-transparent font-medium">
+                <span className="bg-gradient-to-r from-blue-400 via-blue-200 to-sky-300 bg-clip-text text-transparent font-medium">
                   КЛЮЧОВІ ПИТАННЯ
                 </span>
               </h2>
             </div>
 
             <div ref={descRef} className="max-w-md will-change-transform">
-              <p className="font-sans text-sm sm:text-base text-[#0f1115]/75 leading-relaxed tracking-tight">
+              <p className="font-sans text-sm sm:text-base text-zinc-400 leading-relaxed tracking-tight">
                 Регламент виїзду, гарантії повної конфіденційності та практичні стандарти безпеки IRON SECURITY у Києві.
               </p>
             </div>
           </div>
 
           {/* Разделительная линия с анимацией scaleX */}
-          <div ref={borderRef} className="h-px w-full bg-black/10 will-change-transform" />
+          <div ref={borderRef} className="h-px w-full bg-white/10 will-change-transform" />
         </header>
 
         {/* ── Компактный центрированный аккордеон вопросов и ответов ── */}
@@ -155,8 +161,8 @@ export const FAQ: React.FC<FAQProps> = () => {
                   key={item.id}
                   className={`faq-card rounded-[16px] border transition-[background,border-color,box-shadow] duration-300 overflow-hidden ${
                     isOpen
-                      ? 'bg-gradient-to-r from-[#081d45] via-[#1d4ed8] to-[#0284c7] border-blue-400/60 shadow-[0_12px_35px_rgba(37,99,235,0.38)]'
-                      : 'bg-gradient-to-r from-[#0a1222] via-[#0e1d3e] to-[#0b1733] border-blue-500/25 hover:border-blue-400/50 shadow-[0_4px_20px_rgba(10,18,34,0.18)] hover:shadow-[0_8px_30px_rgba(37,99,235,0.22)]'
+                      ? 'bg-gradient-to-r from-[#081d45] via-[#1d4ed8] to-[#0284c7] border-blue-400/80 shadow-[0_12px_35px_rgba(37,99,235,0.45)] ring-1 ring-blue-400/30'
+                      : 'bg-gradient-to-r from-[#081d45] via-[#113478] to-[#092257] border-blue-500/35 hover:border-blue-400/60 shadow-[0_4px_20px_rgba(8,29,69,0.35)] hover:shadow-[0_8px_30px_rgba(29,78,216,0.3)]'
                   }`}
                 >
                   {/* Кнопка раскрытия вопроса */}
@@ -167,12 +173,12 @@ export const FAQ: React.FC<FAQProps> = () => {
                     className="w-full text-left p-5 sm:p-5.5 flex items-center justify-between gap-4 cursor-pointer select-none group"
                   >
                     <div className="flex items-center gap-3.5 sm:gap-4 flex-1 min-w-0">
-                      {/* Номер вопроса в градиентном или белом бейдже */}
+                      {/* Номер вопроса */}
                       <span
                         className={`font-tactical font-black text-sm px-2.5 py-1 rounded transition-colors duration-300 shrink-0 ${
                           isOpen
                             ? 'bg-white text-[#081d45] shadow-xs'
-                            : 'bg-gradient-to-r from-[#1d4ed8] to-[#0284c7] text-white shadow-xs'
+                            : 'bg-white/15 text-white border border-white/20 shadow-xs group-hover:bg-white group-hover:text-[#081d45]'
                         }`}
                       >
                         {item.number}
@@ -194,15 +200,13 @@ export const FAQ: React.FC<FAQProps> = () => {
                       </div>
                     </div>
 
-                    {/* Круглая иконка переключения +/- */}
+                    {/* Круглая иконка переключения +/- (всегда белая) */}
                     <div
-                      className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center border shrink-0 transition-all duration-300 ${
-                        isOpen
-                          ? 'bg-white text-[#081d45] border-white rotate-45 shadow-sm'
-                          : 'bg-white/10 text-white border-white/15 group-hover:bg-white group-hover:text-[#081d45]'
+                      className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center bg-white text-[#081d45] border border-white shrink-0 transition-all duration-300 shadow-sm ${
+                        isOpen ? 'rotate-45 bg-white text-[#081d45]' : 'group-hover:scale-105'
                       }`}
                     >
-                      <Plus className="w-3.5 h-3.5" />
+                      <Plus className="w-3.5 h-3.5 stroke-[2.5]" />
                     </div>
                   </button>
 
