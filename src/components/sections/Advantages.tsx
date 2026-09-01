@@ -26,6 +26,7 @@ export const Advantages: React.FC = () => {
         stagger: 0.15,
         duration: 0.8,
         ease: 'power3.out',
+        clearProps: 'transform,opacity',
         scrollTrigger: {
           trigger: containerRef.current,
           start: 'top 75%',
@@ -57,7 +58,7 @@ export const Advantages: React.FC = () => {
           {advantagesData.map((item, index) => (
             <div
               key={item.id}
-              className="advantage-card bg-zinc-900/40 border border-zinc-800 p-8 sm:p-10 relative group hover:border-slate-400 hover:bg-zinc-900/70 transition-all duration-300"
+              className="advantage-card bg-zinc-900/40 border border-zinc-800 p-8 sm:p-10 relative group hover:border-slate-400 hover:bg-zinc-900/70 transition-[border-color,background-color] duration-300"
             >
               <div className="flex items-start justify-between mb-6">
                 <div className="w-16 h-16 bg-zinc-800 border border-zinc-700 flex items-center justify-center group-hover:border-slate-300 transition-colors">

@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowUpRight, ShieldCheck } from 'lucide-react';
+import { ShieldCheck } from 'lucide-react';
 
 import { SERVICE_CARDS } from '../../../data/serviceCards';
 import { prefersReducedMotion } from '../../../lib/media';
@@ -127,13 +127,6 @@ export const Services: React.FC<ServicesProps> = ({ onOrderClick }) => {
                 className="min-h-[60vh] md:min-h-[85vh] flex flex-col justify-center py-8 md:py-14 first:pt-0 last:pb-12"
               >
                 <div className="max-w-lg">
-                  {/* Градиентный бейдж номера и категории (без точки) */}
-                  <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-gradient-to-r from-blue-600/15 via-blue-500/10 to-indigo-600/15 mb-5">
-                    <span className="font-mono text-[11px] font-bold tracking-wider uppercase bg-gradient-to-r from-[#1d4ed8] via-[#2563eb] to-[#0284c7] bg-clip-text text-transparent">
-                      {service.number} // {service.tag}
-                    </span>
-                  </div>
-
                   {/* Заголовок услуги */}
                   <h3 className="font-['PP_Neue_Montreal'] font-medium text-3xl sm:text-4xl lg:text-[40px] leading-[1.15] text-[#0f1115] uppercase tracking-tight mb-4">
                     {service.title}
@@ -171,7 +164,7 @@ export const Services: React.FC<ServicesProps> = ({ onOrderClick }) => {
                       </svg>
                       <div className="absolute inset-0 flex items-center justify-center gap-2 pb-1 text-[#0f1115] font-mono text-[10px] font-bold tracking-wider uppercase select-none">
                         <ShieldCheck className="w-3.5 h-3.5 text-blue-600 shrink-0" />
-                        <span>{service.tag}</span>
+                        <span>IRON SECURITY // 24/7</span>
                       </div>
                     </div>
 
@@ -205,11 +198,9 @@ export const Services: React.FC<ServicesProps> = ({ onOrderClick }) => {
                   {/* Кнопка заказа услуги (наш единый компонент Button со срезанными углами и LetterRoller) */}
                   <div>
                     <Button
-                      variant="secondary"
+                      variant="gradient"
                       size="md"
                       onClick={onOrderClick}
-                      icon={<ArrowUpRight className="w-4 h-4 text-blue-400 group-hover/btn:text-white transition-colors" />}
-                      className="bg-[#0f1115] text-white border-0 shadow-[0_8px_20px_rgba(0,0,0,0.15)]"
                     >
                       Замовити послугу
                     </Button>
@@ -264,7 +255,7 @@ export const Services: React.FC<ServicesProps> = ({ onOrderClick }) => {
                       {/* Категория услуги по центру внутри выреза */}
                       <div className="absolute inset-0 flex items-center justify-center gap-2 pb-1 text-[#0f1115] font-mono text-[11px] sm:text-xs font-bold tracking-wider uppercase select-none">
                         <ShieldCheck className="w-3.5 h-3.5 text-blue-600 shrink-0" />
-                        <span>{service.tag}</span>
+                        <span>IRON SECURITY // 24/7</span>
                       </div>
                     </div>
 
