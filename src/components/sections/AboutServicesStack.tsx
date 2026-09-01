@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import { About } from './About';
+import { Contact } from './Contact';
 import { FAQ } from './FAQ';
 import { Reviews } from './Reviews';
 import { Services } from './Services';
@@ -32,6 +33,7 @@ export const AboutServicesStack: React.FC<AboutServicesStackProps> = ({ onOrderC
         <Standards onOrderClick={onOrderClick} />
         <Reviews />
         <FAQ onOrderClick={onOrderClick} />
+        <Contact />
       </div>
     </div>
   );
