@@ -25,8 +25,8 @@ export const AboutManifesto = forwardRef<HTMLDivElement>((_props, ref) => {
         </p>
       </div>
 
-      {/* Права колонка: Тактичне відео зі зрізаними кутами */}
-      <div className="lg:col-span-5 flex justify-center">
+      {/* Права колонка: Тактичне 3D відео без обрізання країв */}
+      <div className="lg:col-span-5 flex justify-center w-full">
         <div
           style={{
             clipPath:
@@ -34,7 +34,7 @@ export const AboutManifesto = forwardRef<HTMLDivElement>((_props, ref) => {
             WebkitClipPath:
               'polygon(16px 0%, 100% 0%, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0% 100%, 0% 16px)',
           }}
-          className="group relative w-full aspect-[16/10] sm:aspect-[16/10] lg:aspect-[4/3.4] max-h-[260px] sm:max-h-none lg:max-h-full rounded-2xl overflow-hidden bg-black shadow-[0_20px_50px_rgba(0,0,0,0.8)]"
+          className="group relative w-full aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3.4] rounded-2xl overflow-hidden bg-black shadow-[0_20px_50px_rgba(0,0,0,0.8)]"
         >
           <video
             src="/video/about.mp4"
@@ -43,9 +43,9 @@ export const AboutManifesto = forwardRef<HTMLDivElement>((_props, ref) => {
             loop
             playsInline
             preload="none"
-            className="w-full h-full object-cover contrast-105 brightness-95 group-hover:scale-105 transition-transform duration-700 pointer-events-none"
+            className="w-full h-full object-contain sm:object-cover contrast-105 brightness-95 group-hover:scale-105 transition-transform duration-700 pointer-events-none"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10 pointer-events-none" />
         </div>
       </div>
     </div>

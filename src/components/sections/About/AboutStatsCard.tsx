@@ -11,7 +11,7 @@ export const AboutStatsCard = forwardRef<HTMLDivElement, AboutStatsCardProps>(
     return (
       <div
         ref={ref}
-        className="relative z-10 p-5 sm:p-8 lg:p-5 xl:p-6 lg:shrink-0 rounded-2xl bg-white/[0.02] border border-blue-600/40 shadow-[0_10px_30px_rgba(29,78,216,0.15)] flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-8 lg:gap-6"
+        className="relative z-10 p-5 sm:p-7 lg:p-5 xl:p-6 lg:shrink-0 rounded-2xl bg-white/[0.02] border border-blue-600/40 shadow-[0_10px_30px_rgba(29,78,216,0.15)] flex flex-col lg:flex-row items-center justify-between gap-5 sm:gap-7 lg:gap-6"
       >
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 w-full lg:w-auto">
           {STATS.map((stat) => (
@@ -36,9 +36,10 @@ export const AboutStatsCard = forwardRef<HTMLDivElement, AboutStatsCardProps>(
         <div className="shrink-0 w-full sm:w-auto flex justify-center">
           <Button
             onClick={onOrderClick}
-            size="lg"
+            size="md"
             variant="primary"
-            className="w-full sm:w-[240px] lg:h-[48px]"
+            chamferSize={10}
+            className="w-full sm:w-[220px] h-[44px] sm:h-[48px] text-xs sm:text-[13px] shadow-[0_8px_20px_rgba(0,0,0,0.3)]"
           >
             Замовити охорону
           </Button>
