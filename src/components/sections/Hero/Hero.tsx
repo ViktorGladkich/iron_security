@@ -56,7 +56,7 @@ export const Hero: React.FC<HeroProps> = ({ onOrderClick, onIntroComplete }) => 
         ref={frameRef}
         onPointerMove={handlePointerMove}
         onPointerLeave={handlePointerLeave}
-        className={`${hx.frame} relative w-full h-[calc(100svh-30px)] max-h-[860px] min-h-[540px] rounded-[20px] overflow-hidden bg-[#04060b] select-none cursor-default`}
+        className={`${hx.frame} relative w-full h-[calc(100svh-30px)] max-h-[860px] min-h-[540px] rounded-[20px] overflow-hidden bg-[#04060b] cursor-default`}
       >
         <HeroBackdrop glowRef={glowRef} />
         <Header onOrderClick={onOrderClick} />

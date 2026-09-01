@@ -86,7 +86,7 @@ export const HeroMonitorCard: React.FC<HeroMonitorCardProps> = ({ onOrderClick }
         </Button>
       </div>
 
-      <div className="relative w-22 h-22 sm:w-24 sm:h-24 rounded-2xl overflow-hidden border border-white/25 shrink-0 bg-black/60 shadow-[0_10px_25px_rgba(0,0,0,0.6)] group-hover/card:border-white/40 transition-colors duration-300 mr-1">
+      <div className="relative w-22 h-22 sm:w-24 sm:h-24 rounded-2xl overflow-hidden shrink-0 bg-black/60 shadow-[0_10px_25px_rgba(0,0,0,0.6)] mr-1">
         <img
           src="/images/camera_guard.png"
           alt="Оператор відеоспостереження IRON SECURITY"

@@ -100,8 +100,17 @@ body {
   background-color: #f2f4f7;
   background-image: radial-gradient(circle at 50% 30%, #fafbfc 0%, #ebedf2 100%);
   color: #0f1115;
-  overflow-x: hidden;
   font-family: var(--font-sans);
+}
+
+/*
+ * Горизонтальный клип держим только на html.
+ * На body `overflow-x: hidden` делает его собственным скролл-контейнером, и
+ * `position: sticky` внутри начинает липнуть к нему, а не к вьюпорту — стек
+ * секций About/Services от этого перестаёт работать.
+ */
+html {
+  overflow-x: hidden;
 }
 
 /* Полосы прокрутки под светлый фон страницы, а не под тёмный Hero. */

@@ -24,7 +24,7 @@ const SIZE_STYLES: Record<ButtonSize, string> = {
 
 const VARIANT_STYLES: Record<ButtonVariant, { surface: string; rest: string; hover: string }> = {
   primary: { surface: 'bg-[#f2f4f7]', rest: 'text-[#0f1115]', hover: 'text-white font-bold' },
-  secondary: { surface: 'bg-[#0f1115] border border-white/10', rest: 'text-white', hover: 'text-white font-bold' },
+  secondary: { surface: 'bg-[#0f1115]', rest: 'text-white', hover: 'text-white font-bold' },
   glass: { surface: 'bg-white/15', rest: 'text-white', hover: 'text-white font-bold' },
   outline: { surface: 'bg-transparent border border-white/30', rest: 'text-white', hover: 'text-white font-bold' },
 };

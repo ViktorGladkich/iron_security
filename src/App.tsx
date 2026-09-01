@@ -7,17 +7,19 @@ import { useInView } from './hooks/useInView';
 /**
  * Секции ниже первого экрана грузятся отдельными чанками.
  *
- * About тянет ScrollTrigger и автоплей-видео на 2 МБ. Смонтированный вместе с
- * Hero, он отбирал кадры у вступительной анимации: инициализация видеодекодера
- * и замеры ScrollTrigger — это длинные задачи в главном потоке, а таймлайн
- * GSAP в это время не рисуется и потом навёрстывает пропущенное рывком.
+ * Стек About + Services тянет ScrollTrigger, Flip, автоплей-видео на 2 МБ и
+ * четыре фотографии. Смонтированный вместе с Hero, он отбирал кадры у
+ * вступительной анимации: инициализация видеодекодера и замеры ScrollTrigger —
+ * длинные задачи в главном потоке, а таймлайн GSAP в это время не рисуется и
+ * потом навёрстывает пропущенное рывком. Обе секции появляются вместе, поэтому
+ * лежат в одном чанке.
  */
-const About = lazy(() => import('./components/sections/About').then((m) => ({ default: m.About })));
+const AboutServicesStack = lazy(() => import('./components/sections/AboutServicesStack'));
 const ContactModal = lazy(() =>
   import('./components/sections/ContactModal').then((m) => ({ default: m.ContactModal })),
 );
 
-/** Резерв высоты под ленивую секцию, чтобы её появление не дёргало вёрстку. */
+/** Резерв высоты под ленивые секции, чтобы их появление не дёргало вёрстку. */
 const SectionPlaceholder = <div className="min-h-[80vh]" aria-hidden />;
 
 export const App: React.FC = () => {
@@ -25,8 +27,8 @@ export const App: React.FC = () => {
   const [isHeroSettled, setHeroSettled] = useState(false);
 
   // Второй триггер на случай, если пользователь доскроллил раньше, чем
-  // доиграло вступление: секция не должна ждать анимацию, которой не видно.
-  const { ref: aboutSlotRef, inView: aboutInView } = useInView<HTMLDivElement>();
+  // доиграло вступление: секции не должны ждать анимацию, которой не видно.
+  const { ref: contentSlotRef, inView: contentInView } = useInView<HTMLDivElement>();
 
   const openOrder = useCallback(() => setOrderOpen(true), []);
   const closeOrder = useCallback(() => setOrderOpen(false), []);
@@ -37,10 +39,10 @@ export const App: React.FC = () => {
       <main className="flex-1">
         <Hero onOrderClick={openOrder} onIntroComplete={settleHero} />
 
-        <div ref={aboutSlotRef}>
-          {isHeroSettled || aboutInView ? (
+        <div ref={contentSlotRef}>
+          {isHeroSettled || contentInView ? (
             <Suspense fallback={SectionPlaceholder}>
-              <About onOrderClick={openOrder} />
+              <AboutServicesStack onOrderClick={openOrder} />
             </Suspense>
           ) : (
             SectionPlaceholder
