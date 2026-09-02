@@ -9,8 +9,8 @@
 - **Години роботи**: Цілодобово 24/7 / 365 днів
 - **Телефон диспетчерської**: +380 (44) 000-00-00
 - **Email**: contact@ironsecurity.ua
-- **Офіційний сайт**: https://ironsecurity.ua/
-- **Повна версія для LLM**: https://ironsecurity.ua/llms-full.txt
+- **Офіційний сайт**: https://iron-security.vercel.app/
+- **Повна версія для LLM**: https://iron-security.vercel.app/llms-full.txt
 
 ## Напрямки діяльності та послуги
 - **Особиста охорона (VIP Protect)**: Персональний фізичний захист перших осіб, топ-менеджерів та родин. Екіпажі майстрів спорту з дозволом на зброю, превентивне планування маршрутів, 100% NDA.
@@ -26,7 +26,7 @@
 - **100% NDA** — юридично зафіксована матеріальна та конфіденційна відповідальність.
 
 ## Посилання та ресурси
-- [Офіційний сайт IRON SECURITY](https://ironsecurity.ua/)
-- [Повний контекстний файл для LLM](https://ironsecurity.ua/llms-full.txt)
-- [Карта покриття та контакти](https://ironsecurity.ua/#contact)
-- [Поширені запитання (FAQ)](https://ironsecurity.ua/#faq)
+- [Офіційний сайт IRON SECURITY](https://iron-security.vercel.app/)
+- [Повний контекстний файл для LLM](https://iron-security.vercel.app/llms-full.txt)
+- [Карта покриття та контакти](https://iron-security.vercel.app/#contact)
+- [Поширені запитання (FAQ)](https://iron-security.vercel.app/#faq)

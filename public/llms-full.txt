@@ -64,4 +64,4 @@ IRON SECURITY — провідна ліцензована охоронна ко�
 - **Email для замовлень та кошторисів**: contact@ironsecurity.ua
 - **Telegram канал / Бот**: https://t.me/iron_security
 - **Адреса головного офісу**: м. Київ, Україна
-- **Офіційний сайт**: https://ironsecurity.ua/
+- **Офіційний сайт**: https://iron-security.vercel.app/

@@ -3,15 +3,15 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://ironsecurity.ua/</loc>
+    <loc>https://iron-security.vercel.app/</loc>
     <lastmod>2026-09-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://ironsecurity.ua/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ironsecurity.ua/" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://iron-security.vercel.app/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iron-security.vercel.app/" />
     <image:image>
-      <image:loc>https://ironsecurity.ua/images/human_hero_security_cropped.png</image:loc>
-      <image:title>Оперативник IRON SECURITY Київ</image:title>
+      <image:loc>https://iron-security.vercel.app/og-image.jpg</image:loc>
+      <image:title>IRON SECURITY Київ</image:title>
       <image:caption>Професійна охорона у Києві — екіпажі спортсменів з навичками поводження зі зброєю</image:caption>
     </image:image>
   </url>

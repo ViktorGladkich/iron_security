@@ -1,4 +1,4 @@
-# robots.txt for IRON SECURITY (https://ironsecurity.ua)
+# robots.txt for IRON SECURITY (https://iron-security.vercel.app)
 User-agent: *
 Allow: /
 Disallow: /api/
@@ -30,6 +30,5 @@ User-agent: cohere-ai
 Allow: /
 
 # Sitemaps and LLM Knowledge Files
-Sitemap: https://ironsecurity.ua/sitemap.xml
-# LLMs Context Standard (https://llmstxt.org/)
-# LLM: https://ironsecurity.ua/llms.txt
+Sitemap: https://iron-security.vercel.app/sitemap.xml
+# LLM: https://iron-security.vercel.app/llms.txt
